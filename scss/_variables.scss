@@ -1,0 +1,19 @@
+$primary-color: hsl(0, 0%, 43%);
+$secondary-color: hsl(120, 83%, 55%);
+$text-color: #fff;
+
+// Maps
+$font-weights: (
+    "regular": 400,
+    "semi-bold": 500,
+    "bold": 600,
+    "extra-bold": 700
+);
+
+$colors: (
+    "text-color": hsl(0, 0%, 100%),
+    "light-grey": hsl(0, 0%, 59%),
+    "dark-orange": hsl(19, 100%, 46%)
+);
+
+$mobile: 600px;

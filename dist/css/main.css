@@ -1,0 +1,72 @@
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+body {
+  font-weight: 700;
+  color: white;
+  background-color: #6e6e6e;
+  margin: 0;
+}
+
+.intro {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 25%;
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+.intro .intro__message, .intro .intro__message--second {
+  color: #eb4a00;
+}
+
+.intro .intro__message:hover, .intro .intro__message--second:hover {
+  color: hotpink;
+}
+
+.intro .intro__message--second:hover {
+  color: #2deb2d;
+}
+
+@media (max-width: 600px) {
+  .intro {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.light {
+  background-color: white;
+  color: black;
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,68 @@
+@import './resets';
+@import './variables';
+
+@function getFontWeight($weight-name) {
+    @return map-get($font-weights, $weight-name);
+}
+
+@mixin flexCenter($direction) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin theme($light-theme: true) {
+    @if ($light-theme) {
+        background-color: lighten($color: $primary-color, $amount: 100%);
+        color: darken($color: $primary-color, $amount: 100%);
+    }
+}
+
+@mixin mobile {
+    @media (max-width: $mobile) {
+        @content;
+    }
+}
+
+body {
+    font-weight: getFontWeight(extra-bold);
+    color: map-get($colors, text-color);
+    background-color: $primary-color;
+
+    margin: 0;
+}
+
+.intro {
+    @include flexCenter(row);
+
+    width: 100% - 75%;
+    margin: 0 auto;
+    max-width: 900px;
+
+    // String interpolation used here because without it, the selector created
+    // will not be a descendant of ".intro" but a simple class selector
+    #{&}__message {
+        color: map-get($colors, dark-orange);
+
+        &:hover {
+            color: hotpink;
+        }
+    }
+
+    #{&}__message--second {
+        @extend .intro__message;
+
+        &:hover {
+            color: $secondary-color;
+        }
+    }
+
+    @include mobile() {
+        @include flexCenter(column);
+    }
+}
+
+.light {
+    @include theme($light-theme: true);
+}
